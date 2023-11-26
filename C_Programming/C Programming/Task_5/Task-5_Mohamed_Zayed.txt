@@ -1,0 +1,209 @@
+problem 1 
+
+struct User_Car 
+{
+	int carID ;
+	char Car_Model[100];
+	int Maxspeed ;
+	int battery_level ;
+	int weight ;
+};
+
+==========================================
+
+problem 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct CarDetails {
+    int carId;
+    int maxSpeed;
+    int batteryLevel;
+    int weight;
+    char modelName[100];
+};
+
+int main() {
+    unsigned int numberOfCars, counter = 0;
+
+    printf("Enter number of cars: ");
+    scanf("%u", &numberOfCars);
+
+    struct CarDetails info[numberOfCars];
+
+    for (counter = 0; counter < numberOfCars; counter++) {
+        printf("Enter car id for car %u: ", counter + 1);
+        scanf("%i", &info[counter].carId);
+        printf("Enter max speed for car %u: ", counter + 1);
+        scanf("%i", &info[counter].maxSpeed);
+        printf("Enter battery level for car %u: ", counter + 1);
+        scanf("%i", &info[counter].batteryLevel);
+        printf("Enter weight for car %u: ", counter + 1);
+        scanf("%i", &info[counter].weight);
+        printf("Enter model name for car %u: ", counter + 1);
+        scanf("%s", info->modelName);
+    }
+
+    return 0;
+}
+
+
+
+===================================================
+problem 3
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct CarInfo {
+    int carId;
+    int maxSpeed;
+    int batteryLevel;
+    int weight;
+    char modelName[100];
+};
+
+void printCarInfo(struct CarInfo info[], unsigned int chosenCar);
+
+int main() {
+    unsigned int numberOfCars;
+    unsigned int counter = 0;
+    unsigned int chosenCar;
+
+    printf("Enter number of cars: ");
+    scanf("%u", &numberOfCars);
+
+    struct CarInfo info[numberOfCars];
+
+    for (counter = 0; counter < numberOfCars; counter++) {
+        printf("Enter car id for car %u: ", counter + 1);
+        scanf("%i", &info[counter].carId);
+        printf("Enter max speed for car %u: ", counter + 1);
+        scanf("%i", &info[counter].maxSpeed);
+        printf("Enter battery level for car %u: ", counter + 1);
+        scanf("%i", &info[counter].batteryLevel);
+        printf("Enter weight for car %u: ", counter + 1);
+        scanf("%i", &info[counter].weight);
+        printf("Enter model name for car %u: ", counter + 1);
+        scanf("%s", info->modelName);
+    }
+
+    printf("Enter the number of the car you want information about: ");
+    scanf("%u", &chosenCar);
+
+    printCarInfo(info, chosenCar);
+
+    return 0;
+}
+
+void printCarInfo(struct CarInfo info[], unsigned int chosenCar) {
+    printf("Car id: %i\n", info[chosenCar - 1].carId);
+    printf("Car max speed: %i\n", info[chosenCar - 1].maxSpeed);
+    printf("Car battery level: %i\n", info[chosenCar - 1].batteryLevel);
+    printf("Car weight: %i\n", info[chosenCar - 1].weight);
+    printf("Car model name: %s", info[chosenCar - 1].modelName);
+}
+
+================================================================
+4-
+
+#include <stdio.h>
+#include <string.h>
+
+struct CarInfo {
+    int carID;
+    char carName[30];
+    char maxSpeed;
+    float batteryLevel;
+    double weightKg;
+};
+
+struct CarInfo initializeCar(int id, char name[10], char maxSpeed, float battery, double weight);
+
+int main() {
+    struct CarInfo myCar = initializeCar(1, "Tesla", 'A', 85.5, 1500.0);
+
+    printf("Car ID: %d\n", myCar.carID);
+    printf("Car Name: %s\n", myCar.carName);
+    printf("Max Speed: %c\n", myCar.maxSpeed);
+    printf("Battery: %.2f\n", myCar.batteryLevel);
+    printf("Weight: %.2lf\n", myCar.weightKg);
+
+    return 0;
+}
+
+struct CarInfo initializeCar(int id, char name[10], char maxSpeed, float battery, double weight) {
+    struct CarInfo car;
+    car.carID = id;
+    strncpy(car.carName, name, sizeof(car.carName));
+    car.maxSpeed = maxSpeed;
+    car.batteryLevel = battery;
+    car.weightKg = weight;
+    return car;
+}
+
+===========================================================
+5-
+
+#include <stdio.h>
+
+struct CarInfo {
+    int carId;
+    char carName[10];
+    char maxSpeedGrade;
+    float batteryCapacity;
+    double weightKg;
+};
+
+void initializeCarData(struct CarInfo *carInfoPtr);
+
+int main() {
+    struct CarInfo myCar;
+
+    initializeCarData(&myCar);
+
+    printf("Car ID: %d\n", myCar.carId);
+    printf("Car Name: %s\n", myCar.carName);
+    printf("Max Speed Grade: %c\n", myCar.maxSpeedGrade);
+    printf("Battery Capacity: %.2f\n", myCar.batteryCapacity);
+    printf("Weight: %.2lf\n", myCar.weightKg);
+
+    return 0;
+}
+
+void initializeCarData(struct CarInfo *carInfoPtr) {
+    carInfoPtr->carId = 1;
+    snprintf(carInfoPtr->carName, sizeof(carInfoPtr->carName), "Tesla");
+    carInfoPtr->maxSpeedGrade = 'A';
+    carInfoPtr->batteryCapacity = 98.5;
+    carInfoPtr->weightKg = 2000.0;
+}
+
+======================================================
+
+6-
+
+#include <stdio.h>
+
+int main()
+{
+    unsigned int value = 1;
+    unsigned char *bytePointer = (unsigned char *)&value;
+
+    if (*bytePointer == 1) {
+        printf("Your system is little-endian.\n");
+    } else {
+        printf("Your system is big-endian.\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+

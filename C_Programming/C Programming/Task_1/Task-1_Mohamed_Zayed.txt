@@ -1,0 +1,345 @@
+// Problem 1
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 0, b = 0;
+    char op = '0';
+    printf("Enter the equation: \n");
+    scanf("%d %c %d", &a, &op, &b);
+    if (b == 0 && op == '/')
+    {
+        printf("Can't divide on 0\n");
+    }
+    else
+    {
+        switch(op)
+        {
+        case '+':
+            printf("%d %c %d = %d",a,op,b,a + b);
+            break;
+        case '-':
+            printf("%d %c %d = %d",a,op,b,a - b);
+            break;
+        case '*':
+            printf("%d %c %d = %d",a,op,b,a * b);
+            break;
+        case '/':
+            printf("%d %c %d = %d",a,op,b,a / b);
+            break;
+        default:
+            printf("Invalid operator.\n");
+        }
+    }
+
+return 0;
+}
+	-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+// Problem 2
+
+#include <stdio.h>
+#define PI (3.14)
+
+int main()
+{
+    double radius, area = 0;
+    printf("Enter the radius\n");
+    scanf("%lf", &radius);
+    area = radius * radius * PI;
+    printf("The area of the circle = %f", area);
+    return 0;
+}
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Problem 3.
+
+#include <stdio.h>
+
+
+int main()
+{
+    char c = 0;
+    printf("Enter a char\n");
+    scanf("%c", &c);
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    {
+        if(c >= 'a' && c <= 'z')
+            printf("the input is a small char");
+        else
+            printf("the input is a capital char");
+    }
+    else if(c >= '0' && c <= '9')
+    {
+        printf("the input is a digit");
+    }	
+    else
+        printf("the input is a special char");
+    printf("\n");
+    return 0;
+}
+-------------------------------------------------------------------------------
+Problem 4:
+
+#include <stdio.h>
+
+
+int main()
+{
+    double a, b, result = 0;
+    printf("Enter the two numbers to divide\n");
+    scanf("%lf %lf", &a, &b);
+    if (b == 0)
+    {
+        printf("error, can't divide on 0\n");
+    }
+    else
+    {
+    result = a / b;
+    printf("Result = %.3lf\n",result);
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------
+Problem 5:
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+    printf("Enter the three numbers\n");
+    scanf("%d %d %d", &a, &b, &c);
+    a = (a > b ? a : b);
+    a = (a > c ? a : c);
+    printf("The largest number is : %d", a);
+    return 0;
+}
+-------------------------------------------------------------------------------
+Problem 6:
+
+#include <stdio.h>
+
+
+int main()
+{
+    int x, y;
+    printf("Enter value of x \n");
+    scanf("%d", &x);
+    printf("Enter value of y \n");
+    scanf("%d", &y);
+    printf("Before Swap\nx = %d\ny = %d\n", x, y);
+    x = x + y;
+    y = x - y;
+    x = x - y;
+    printf("After Swap\nx = %d\ny = %d", x, y);
+    return 0;
+}
+---------------------------------------------------------------------------------
+Problem 7:
+
+#include <stdio.h>
+
+
+int main()
+{
+    int x, y;
+    printf("Enter value of x \n");
+    scanf("%d", &x);
+    printf("Enter value of y \n");
+    scanf("%d", &y);
+    printf("Before Swap\nx = %d\ny = %d\n", x, y);
+    x = x + y;
+    y = x - y;
+    x = x - y;
+    printf("After Swap\nx = %d\ny = %d", x, y);
+    return 0;
+}
+-----------------------------------------------------------------------------
+Problem 8:
+
+#include <stdio.h>
+
+
+int main()
+{
+    int decimal, binary = 0, x = 1;
+    printf("Enter the number\n");
+    scanf("%d", &decimal);
+    while (decimal)
+    {
+        binary += (decimal % 2) * x;
+        x *= 10;
+        decimal /= 2;
+    }
+    printf("The binary = %d\n", binary);
+
+    return 0;
+}
+------------------------------------------------------------------------------
+Problem 9:
+
+#include <stdio.h>
+
+	int main()
+	{
+	int x;
+	printf("Enter The number\n");
+	scanf("%i", &x);
+	if (x % 2)
+		printf("The number %i is odd.\n", x);
+	else
+		printf("The number %i is even.\n", x);
+
+	return 0;
+}
+
+-------------------------------------------------------------------------------
+Problem 10:
+
+#include <stdio.h>
+
+int main()
+{
+	int x, sum = 0, odd = 0;
+	while (odd < 2)
+    {
+        printf("\nEnter the number: ");
+        scanf("%d", &x);
+        if (x % 2)
+            odd++;
+        else
+        {
+            sum += x;
+            odd = 0;
+        }
+        printf("Sum = %d", sum);
+    }
+    printf(" ,bye\n");
+	return 0;
+}
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+problem 11:
+
+1-bitwise op ..
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x ;
+	printf ( "Enter a number \n" );
+	scanf ("%d",&x) ;
+	if (x>0 && (x & (x-1)) == 0)
+        printf ("%d is based of 2",x);
+    else
+        printf ("%d is not based of 2",x);
+    return 0;
+}
+
+
+
+2-  logarithm
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x ;
+	printf ( "Enter a number \n" );
+	scanf ("%d",&x) ;
+	if ( x>0 && log2(x)==(int)log2(x) )
+        printf ("%d is based of 2",x);
+    else
+        printf ("%d is not based of 2",x);
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+problem 12 :
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,binary=0 ,y=1,count=0;
+	printf ( "Enter a number \n" );
+	scanf ("%d",&x) ;
+
+	while (x>0)
+    {
+        binary += (x%2) *y;
+        x/=2;
+        y*=10;
+    }
+
+    while (binary >0)
+    {
+        if (binary%10 == 1)
+            count++;
+        binary /= 10 ;
+    }
+    printf ("The number of set numbers is = %d\n",count);
+
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+problem 13:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,binary=0 ,y=1,c;
+	printf ( "Enter a number \n" );
+	scanf ("%d",&x) ;
+
+
+   printf ("Which number you want to toggle \n");
+   scanf("%d",&c);
+
+   printf ("The new number is  %d",x ^ (1 << c));
+
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+problem 14:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x ,sum=0;
+    printf ("Enter number : \n");
+    scanf ("%d",&x);
+
+    while (x>0)
+    {
+        sum += x%10;
+        x/=10;
+    }
+    printf ("Sum = %d",sum);
+    return 0;
+}
+

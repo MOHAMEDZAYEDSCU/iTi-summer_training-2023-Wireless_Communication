@@ -1,0 +1,334 @@
+problem_1 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void swap (int *a , int *b)
+{
+    int tmp ;
+    tmp = *a ;
+    *a = *b ;
+    *b = tmp ;
+    //return ;
+}
+
+int main()
+{
+    int x ,y ,*ptr ;
+    printf ("Enter 2 values \n");
+    scanf("%d %d",&x,&y);
+
+    swap (&x,&y) ;
+    printf ("x = %d\ny = %d",x,y) ;
+
+    return 0;
+}
+
+-------------------------------------------------
+
+problem -2
+
+#include <stdio.h>
+#include <stdlib.h>
+int arr1[10] = {0} ;
+int arr2[10] = {0} ;
+
+void swap (int a[] , int b[] , int size1 ,int size2 )
+{
+    int tmp = size1 , x ;
+
+    if (size2>size1)
+        tmp = size2 ;
+
+    for (int i=0;i<tmp;i++)
+    {
+        x = a[i] ;
+        a[i] = b[i] ;
+        b[i] = x ;
+    }
+     printf ("--------------------------------\n--------------------------------\n");
+     printf ("The first array is \n");
+
+    for (int i=0;i<size2;i++)
+    {
+        printf ("%d " , a[i]);
+    }
+
+    printf ("\nThe second array is \n");
+    for (int i=0;i<size1;i++)
+    {
+        printf ( "%d " , b[i]) ;
+    }
+    printf ("\n");
+}
+
+int main()
+{
+    int x , y , i ;
+
+    printf ("Enter the size of the first then second array \n");
+    scanf ("%d %d",&x,&y);
+
+
+    int arr1[x] , arr2[y] , *p1 = arr1 , *p2 = arr2 ;
+
+    printf ("Enter first array values \n");
+
+    for (int i=0;i<x;i++)
+    scanf(" %d",&arr1[i]) ;
+
+    printf ("Enter second array values \n");
+
+    for (int i=0;i<y;i++)
+    scanf(" %d",&arr2[i]);
+
+    swap (p1,p2,x,y) ;
+
+
+    return 0;
+}
+
+-----------------------------------------------------------------
+
+3-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define My_array_size(x) ( sizeof(x) / sizeof(x[0]) )
+
+int arr[] = {1,2,3,4,5,6} ;
+
+int main()
+{
+    int x = My_array_size(arr) ;
+
+    printf ("The size of array is %d\n" , x);
+
+    return 0;
+}
+
+-------------------------------------------------------------------
+4- 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define my_size_of(x) sizeof(x)
+
+int main()
+{
+    int *type = my_size_of(type) ;
+
+    printf ("The size of int is %d\n" , my_size_of(int));
+    printf ("The size of double is %d\n" , my_size_of(double));
+    printf ("The size of char is %d\n" , my_size_of(char));
+    
+    return 0;
+}
+
+----------------------------------------------------------------------
+5-
+
+#include <stdio.h>
+int size = 10, cou[10] = {0}, index = 0;
+int i;
+
+void repeatCounter(char *a, int size)
+{
+    for (i = 0; i < size; i++)
+        cou[a[i] - '0']++;
+    return;
+}
+void repeatCounter2(int* cou)
+{
+     for (i = 1; i <= 9; i++) {
+        if (cou[i] > cou[index]) {
+            index = i;
+        }
+    }
+    return;
+}
+int main()
+{
+    char arr[size];
+
+    printf("Enter the size of array:\n");
+    scanf("%d", &size);
+
+    printf("Enter the array elements:\n");
+
+    for (i = 0; i < size; i++)
+        scanf(" %c", &arr[i]);
+        repeatCounter(arr, size);
+        repeatCounter2(cou);
+    printf("The most repeated number is %d\n", index);
+
+    return 0;
+}
+
+---------------------------------------------------------------
+6 - 
+
+#include <stdio.h>
+#define size_of_string(arr) (sizeof(arr) / sizeof(arr[0]) )
+
+char arr[100] ;
+
+
+int main (void)
+{
+    printf ("Enter your string :\n");
+    gets(arr);
+
+    int n = size_of_string(arr) ;
+    char *ptr = arr + n - 1 ;
+
+    for (int i=0;i<n;++i)
+    {
+        char c = tolower(*ptr);
+        printf ("%c",c);
+        *ptr--;
+    }
+
+}
+
+-------------------------------------------------------------
+7-
+
+#include <stdio.h>
+
+int arr[3][3] = {5, 3, 8, 1, 7, 4, 9, 2, 6};
+int *ptr1 = &arr[0][0];
+
+void sortArray(int *ptr, int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size - 1; j++) {
+            if (*(ptr + j) > *(ptr + j + 1)) {
+                int temp = *(ptr + j);
+                *(ptr + j) = *(ptr + j + 1);
+                *(ptr + j + 1) = temp;
+            }
+        }
+    }
+}
+
+int main(void) {
+    sortArray(ptr1, 9);
+
+    for (int i = 0; i < 3; i++) 
+    {
+        for (int j = 0; j < 3; j++) 
+	   {
+		printf("%d ", *(ptr1 + i * 3 + j));
+           }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+-----------------------------------------------------------
+
+8 - 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int arr[100];
+int counter0;
+int counter1;
+
+void between(int Number1, int Number2);
+
+int main()
+{
+    int N1, N2;
+
+    printf("Enter two numbers : \n");
+    printf("N1 : ");
+    scanf("%d", &N1);
+    printf("N2 : ");
+    scanf("%d", &N2);
+
+    between(N1, N2);
+    printf("The length of array = %d ", counter0);
+    return 0;
+}
+
+void between(int Number1, int Number2)
+{
+    if (Number1 > Number2)
+    {
+        while (Number2 < Number1 - 1)
+        {
+            Number2++;
+            arr[counter0] = Number2;
+            counter0++;
+        }
+    }
+    else
+    {
+        while (Number1 < Number2 - 1)
+        {
+            Number1++;
+            arr[counter0] = Number1;
+            counter0++;
+        }
+    }
+    for (counter1 = 0; counter1 < counter0; counter1++)
+    {
+        printf("Arr[%d] = %d \n", counter1, arr[counter1]);
+    }
+}
+
+---------------------------------------------------------------
+
+9-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void findLongestConsecutive(int numbers[], int length, int *mostFrequent, int *frequency);
+
+int main() {
+    int numbers[] = {2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 4, 4, 4};
+    int length = sizeof(numbers) / sizeof(numbers[0]);
+
+    int mostFrequent, frequency;
+    findLongestConsecutive(numbers, length, &mostFrequent, &frequency);
+
+    printf("Number with longest consecutive occurrence: %d\n", mostFrequent);
+    printf("Count of longest consecutive occurrence: %d\n", frequency);
+
+    return 0;
+}
+
+void findLongestConsecutive(int numbers[], int length, int *mostFrequent, int *frequency) {
+    int currentNumber = numbers[0];
+    int currentFrequency = 1;
+
+    *mostFrequent = numbers[0];
+    *frequency = 1;
+
+    for (int i = 1; i < length; ++i) {
+        if (numbers[i] == currentNumber) {
+            currentFrequency++;
+        } else {
+            currentNumber = numbers[i];
+            currentFrequency = 1;
+        }
+
+        if (currentFrequency > *frequency) {
+            *frequency = currentFrequency;
+            *mostFrequent = currentNumber;
+        }
+    }
+}
+
+--------------------------------------------------
+--------------------------------------------------
+not completed ..
+
+

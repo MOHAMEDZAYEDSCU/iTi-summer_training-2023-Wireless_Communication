@@ -1,0 +1,307 @@
+problem 1 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float division(float x, float y)
+{
+    float div;
+    div = x / y;
+    return div;
+}
+
+int main()
+{
+    float x, y;
+
+    printf("Enter 2 numbers:\n");
+    scanf("%f %f", &x, &y);
+
+    printf("The divide = %.3f", division(x, y));
+
+    return 0;
+}
+
+-------------------------------------------
+
+problem 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int binary_function(int a)
+{
+    int y=1,binary=0;
+    while(a>0)
+    {
+        binary += (a%2) *y ;
+        y*=10;
+        a/=2;
+    }
+    return binary ;
+}
+int bits_function (b)
+{
+    int c=0 ;
+    while ( b>0 )
+    {
+        c++ ;
+        b/=10;
+    }
+    return c ;
+}
+
+int main()
+{
+    int x ;
+
+    printf("Enter a number:\n");
+    scanf("%d",&x);
+
+    printf ("The number has %d bits" ,bits_function (binary_function(x)) ) ;
+
+
+    return 0;
+}
+
+--------------------------------------------------------------
+
+problem 3 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,c=0,max=0;
+    printf ("Enter a number :\n");
+    scanf ("%d",&x);
+
+        while (x%2==1 && x>0)
+        {
+            x/=2;
+            while (x%2==0&&x>0)
+            {
+                c++ ;
+                x/=2;
+            }
+            if (c>max)
+            max = c ;
+            c=0;
+        }
+        printf ("%d",max);
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------
+
+problem 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int multiplication(int a , int b)
+{
+    int mul = 0 ;
+    for (int i=0 ; i < b ; i++)
+        mul += a ;
+    return mul ;
+}
+
+int main ()
+{
+    int x,y;
+    printf ("Enter 2 numbers :\n");
+    scanf ("%d %d",&x,&y);
+    
+    printf ("the multiplication = %d" ,multiplication (x,y) ) ;
+
+    return 0;
+}
+
+
+-------------------------------------------------
+
+problem 5 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int addition(int a , int b)
+{
+    int sum = 0 ;
+    for (int i=a+1 ; i<b ; i++)
+        sum += i ;
+    return sum ;
+}
+
+int main ()
+{
+    int x,y,t;
+    printf ("Enter 2 numbers :\n");
+    scanf ("%d %d",&x,&y);
+    if (x>y)
+    {
+        t = x ;
+        x = y ;
+        y = t ;
+    }
+
+    printf ("the summation of all numbers between them = %d" ,addition (x,y) ) ;
+
+    return 0;
+}
+
+---------------------------------------------------------------------------
+
+problem 6
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void power (int  , int );
+int main()
+{
+    int x,y;
+    printf ("Enter 2 numbers :\n");
+    scanf ("%d" "%d",&x,&y);
+
+    power (x,y);
+    return 0;
+}
+void power (int a , int b)
+{
+    for (int i=1 ; i<b ; i++)
+    a *= a ;
+    printf ("The result = %i" , a);
+}
+  
+--------------------------------------------------------
+
+problem 7 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void swap (int a ,int b)
+{
+    int t ;
+    t=a;
+    a=b;
+    b=t;
+    printf ("your swapped numbers  %d  %d" ,a,b) ;
+}
+int main()
+{
+    int x,y;
+    printf ("Enter 2 numbers you want to swap :\n");
+    scanf ("%d %d",&x,&y);
+
+    swap (x,y);
+
+    return 0;
+}
+ ------------------------------------------------------
+
+problem 8
+
+#include <stdio.h>
+
+int main ()
+{
+    int x ,a=0,b=1,sum=0;
+    printf ("Enter a number :\n");
+    scanf ("%d",&x) ;
+
+    if (x<=0)
+        return 0;
+
+    else if (x == 1)
+            printf ("0");
+    else if ( x == 2)
+                printf ("0  1");
+    else {
+    for (int i=1 ; i<x ; i++)
+    {
+        if (i==2)
+            printf ("1  ");
+
+        printf ("%d  ",sum);
+        sum = a+b ;
+        a=b ;
+        b = sum ;
+    }
+    }
+}
+
+----------------------------------------------
+problem 9
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void binary_function(int a)
+{
+    if (a <= 0)
+    {
+        return;
+    }
+
+    binary_function(a / 2);
+    printf("%d", a % 2);
+}
+
+int main()
+{
+    int x;
+    printf ("Enter a number :\n");
+    scanf ("%d" , &x) ;
+    binary_function(x);
+    return 0;
+}
+ 
+---------------------------------------------------------
+problem 11 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void draw_function(int a)
+{
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < a; j++)
+            printf("*");
+        printf("\n");
+    }
+}
+
+void triangle_function(int b)
+{
+    for (int i = 1; i <= b; i++)
+    {
+        for (int j = 1; j <= i; j++)
+            printf("*");
+
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int x, y;
+
+    printf("Enter the number of rows for the square and the triangle:\n");
+    scanf("%d %d", &x, &y);
+
+    printf("The square:\n");
+    draw_function(x);
+
+    printf("The triangle:\n");
+    triangle_function(y);
+
+    return 0;
+}

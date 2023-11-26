@@ -1,0 +1,438 @@
+problem 1 
+
+#include <stdio.h>
+
+   void printer (int num_1 ,int num_2)
+{
+    int x ;
+    if (num_1>num_2)
+    {
+        x = num_1 ;
+        num_1=num_2;
+        num_2=x;
+    }
+        if (num_2 - num_1 == 1)
+                return 0;
+        int i ;
+        for (i=num_1;i<num_2;i++)
+            printf ("%d  ",i);
+}
+
+int main ()
+{
+    int num_1,num_2;
+    printf ("Enter 2 numbers\n");
+    scanf ("%d %d",&num_1,&num_2);
+    printer(num_1,num_2);
+}
+ 
+----------------------------------------
+
+problem 2 
+
+#include <stdio.h>
+int size = 10, cou[10] = {0}, index = 0;
+int i;
+
+void repeatCounter(char* a, int size)
+{
+    for (i = 0; i < size; i++)
+        cou[a[i] - '0']++;
+    return;
+}
+void repeatCounter2(int* cou)
+{
+     for (i = 1; i <= 9; i++) {
+        if (cou[i] > cou[index]) {
+            index = i;
+        }
+    }
+    return;
+}
+int main()
+{
+    char arr[size];
+
+    printf("Enter the size of array:\n");
+    scanf("%d", &size);
+
+    printf("Enter the array elements:\n");
+
+    for (i = 0; i < size; i++)
+        scanf(" %c", &arr[i]);
+        repeatCounter(arr, size);
+        repeatCounter2(cou);
+    printf("The most repeated number is %d\n", index);
+
+    return 0;
+}
+
+-------------------------------------------
+
+problem 3 
+
+#include <stdio.h>
+
+int main(void) {
+    int x,i,num,done = 0;
+
+    printf ("Enter the size of the array :\n");
+    scanf ("%d",&x);
+
+    int arr[x] ;
+
+    for (i=0;i<x;i++)
+    {
+        printf ("Enter the %d element :", i);
+        scanf ("%d",&arr[i]);
+    }
+
+    printf ("Enter the number you want to find :\n");
+    scanf ("%d",&num);
+
+    for (i=0;i<x;i++)
+    {
+        if (arr[i]==num)
+        {
+            printf ("The index of number is %d \n",i);
+            done = 1 ;
+        }
+    }
+    if (done==0)
+        printf ("We can't find the number. \n");
+}
+
+-------------------------------------------------------------
+
+problem 4 
+
+#include <stdio.h>
+
+int x , i , j ,tmp;
+
+int sort_function(int a[] , int size)
+        {
+            for (i=0;i<x;i++)
+            {
+                for (j=i;j<x;j++)
+                {
+                    if (a[i]>a[j])
+                    {
+                        tmp = a[i] ;
+                        a[i]= a[j];
+                        a[j] = tmp ;
+                    }
+                }
+            }
+            return a ;
+        }
+
+void print_function (int arr[])
+    {
+            for (i=0;i<x;i++)
+            {
+                printf (" %d" , arr[i]) ;
+            }
+    }
+
+int main (void)
+{
+
+    printf ("Enter the size of array \n");
+    scanf ("%d",&x);
+    int arr[x] ;
+
+    for (i=0;i<x;i++)
+    {
+        printf ("Enter the element no %d \n" , i);
+        scanf (" %d", &arr[i]);
+    }
+
+    print_function( sort_function(arr,x) );
+}
+
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+
+assignment 3
+
+problem 1 
+
+#include <stdio.h>
+int arr[10] , max=-9999 , min ,sum = 0 , i=0 ,count = 10;
+
+void sum_fun(int arr[])
+{
+    for (i=0;i<10;i++)
+        sum += arr[i] ;
+
+    printf ("The sum = %d \n",sum) ;
+}
+
+void max_fun (int arr[])
+{
+        for (i=0;i<10;i++)
+        {
+            if (arr[i] > max)
+                max = arr[i] ;
+        }
+        printf ("The maximum = %d \n",max);
+}
+
+void min_fun (int arr[])
+{
+     for (i=0;i<10;i++)
+     {
+            if (min>arr[i])
+            min = arr[i] ;
+     }
+     printf ("The min = %d \n" , min);
+}
+
+
+int main ()
+{
+    printf ("Enter 10 element :\n");
+
+    for (i=0;i<10;i++)
+    {
+        scanf(" %d",&arr[i]);
+    }
+
+    sum_fun(arr) ;
+    max_fun (arr) ;
+    min_fun (arr) ;
+}
+
+----------------------------------------------------
+2-
+
+#include <stdio.h>
+
+int main() {
+
+    int matrix1[3][3], matrix2[3][3], result[3][3];
+
+    printf("Enter elements for the first matrix:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    printf("Enter elements for the second matrix:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            result[i][j] = 0;  //initialization for the garbage values ;
+            for (int k = 0; k < 3; k++) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+
+    printf("Resultant matrix after multiplication:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+------------------------------------------------------
+3 - 
+
+#include <stdio.h>
+
+int main() {
+
+    char s1[100],s2[100],s3[200];
+    gets(s1);
+    gets(s2);
+    strcat(s1,s2);
+    printf ("%s",s1);
+    return 0;
+}
+
+---------------------------------------------------- -
+4 -
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+int main() {
+    char input[100];
+    printf("Enter a string: ");
+    gets(input);
+
+    char result[100];
+    int resultIndex = 0;
+
+    for (int i = 0; input[i] != '\0'; i++) {
+        bool isRepeated = false;
+        for (int j = 0; j < resultIndex; j++) {
+            if (result[j] == input[i]) {
+                isRepeated = true;
+                break;
+            }
+        }
+
+        if (!isRepeated) {
+            result[resultIndex] = input[i];
+            resultIndex++;
+        }
+    }
+
+    result[resultIndex] = '\0';
+
+    printf("Output: %s\n", result);
+
+    return 0;
+}
+-----------------------------------------
+
+5 - 
+
+#include <stdio.h>
+
+int main() {
+    int size;
+    printf("Enter the size of the arrays: ");
+    scanf("%d", &size);
+
+    int arr1[size];
+    int arr2[size];
+
+    printf("Enter %d elements for arr1: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter %d elements for arr2: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    int mergedArray[2 * size];
+
+    for (int i = 0; i < size; i++) {
+        mergedArray[2 * i] = arr1[i];
+        mergedArray[2 * i + 1] = arr2[i];
+    }
+
+    printf("Merged array = {");
+    for (int i = 0; i < 2 * size; i++) {
+        printf("%d", mergedArray[i]);
+        if (i != 2 * size - 1) {
+            printf(", ");
+        }
+    }
+    printf("}\n");
+
+    return 0;
+}
+
+---------------------------------------------
+
+6 -
+
+#include <stdio.h>
+
+int main() {
+    int arr[100]; // Adjust the size as needed
+    int size;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    printf("Enter %d elements for the array: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int target;
+    printf("Enter the number to search for: ");
+    scanf("%d", &target);
+
+    int maxCount = 0;
+    int currentCount = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            currentCount++;
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+            }
+        } else {
+            currentCount = 0;
+        }
+    }
+
+    printf("Result = %d\n", maxCount);
+
+    return 0;
+}
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+7 -
+
+#include <stdio.h>
+
+void findLongestConsecutive(int arr[], int n, int *mostRepeated, int *count);
+
+
+int main() {
+    int arr[] = {2, 2, 3, 3, 3,4,4, 4, 4, 4, 4, 5, 5, 5, 5, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int mostRepeated, count;
+    findLongestConsecutive(arr, n, &mostRepeated, &count);
+
+    printf("Number with longest consecutive occurrence: %d\n", mostRepeated);
+    printf("Count of longest consecutive occurrence: %d\n", count);
+
+    return 0;
+}
+
+void findLongestConsecutive(int arr[], int n, int *mostRepeated, int *count) {
+    int currentNum = arr[0];
+    int currentCount = 1;
+
+    *mostRepeated = arr[0];
+    *count = 1;
+
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] == currentNum) {
+            currentCount++;
+        } else {
+            currentNum = arr[i];
+            currentCount = 1;
+        }
+
+        if (currentCount > *count) {
+            *count = currentCount;
+            *mostRepeated = currentNum;
+        }
+    }
+}
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+8 -
+
+
+
+
+
