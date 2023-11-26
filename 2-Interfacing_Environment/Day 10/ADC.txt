@@ -1,0 +1,15 @@
+Analog vs Digital
+
+Analog value is value with no certain step e.g. (the analog values between 0 and 5 are infinite)
+
+The digital value is value with a certain step e.g. (the digital values between 0 and 5 is dependent on the step)
+
+ADC convert the analog values to digital values.
+
+ADC is known by it's bit numbers.
+10-bit ADC output 10 bits.		basically divide the analog values into 10 bits.
+
+V(ref)	is the number which the ADC bits will all turn to 1's
+
+the step = V(ref) / 2 ^ (bits of ADC)
+

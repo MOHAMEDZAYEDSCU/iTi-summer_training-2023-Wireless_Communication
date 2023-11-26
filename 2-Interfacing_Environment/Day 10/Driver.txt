@@ -1,0 +1,29 @@
+Drivers:
+
+drivers are .h and .c files e.g. (DIO.c, DIO.h) to be ready to get included in any project.
+
+dio.h contains
+
+1. a function to initialize all the pins to either inputs or outputs.
+2. a function to read the channel's input, the function takes the port name.
+2. a function to write the channels to output, the function takes the port name and the state to write.
+
+The dio layer is called Micro controller abstraction layer (MCAL).
+
+dio is microcontroller dependant.
+
+Layers:
+
+1. Application				(APP)		Calculator
+2. Hardware Abstraction Layer 		(HAL)		Keypad, LCD
+3. Micro Controller Abstraction layer 	(MCAL)		DIO, SPI
+
+
+
+TASK:
+
+Write the following functions
+
+1. DIO_init(uint8);	<-- uint8 will be directly stored in DDRD
+2. DIO_WriteChannel(PORTA1, 0);
+3. DIO_ReadChannel(PORTA1);
