@@ -1,0 +1,69 @@
+1) Standard input, standard output, and standard error:
+-------------------------------------------------------
+*Standard output*
+=================
+[root@master ~]# date > ~/Desktop/lab/out.txt                        (to direct output of command date to write it inside file "out.txt")
+[root@master ~]# dmesg | tail -n 100 > ~/Desktop/lab/log-dmesg.txt   (to direct output of last 100 lines of command dmesg to file not screen)
+[root@master ~/Desktop]# cal 2020 >> lab/out.txt                     (to append the output of command cal exist file "out.txt")
+[root@master ~/Desktop]# cat file1 file2 file3 file4 > lab/onefile   (can concatenat content of multiple file in one file)       
+[root@master ~/Desktop]# ls -a > lab/my-file-names
+
+*Standard Input*
+=================
+[root@master ~/Desktop]# cat < lab/my-file-names                     (take file "my-file-names" to command "cat")
+
+*Standard Error*
+=================
+[root@master ~/Desktop]# ls mm 2> lab/err.txt                        (to direct error if exist to err.txt file instead of screen)
+[root@master ~/Desktop]# ls mm 2> lab/err.txt  1> lab/out.txt        (to direct error to err.txt and output to out.txt)
+[root@master ~/Desktop]# ls mm &> lab/both.txt                       (to save output and error to same file)
+==============================================================================================
+2) Append output to an existing file:
+--------------------------------------
+
+*HINT*: (find command used to search for file if option -name used)
+
+[root@master ~]#echo "new line of information" >> /tmp/many-lines-of-information
+[root@master ~]# find /etc -name passwd 2> /tmp/errors                       (overwrite standard errors in errors file)  
+[root@master ~]# find /etc -name passwd 2> /tmp/errors 1> /tmp/output        (overwrite  standard output to file "output" and standard error in file "errors")            
+[root@master ~]# find ~/Desktop/ -name out.txt >> /tmp/result.txt            (append standard output)
+[root@master ~]# find /etc -name passwd > /tmp/output 2> /dev/null
+[root@master ~]# find /etc -name passwd &> /tmp/save-both
+[root@master ~]# find /etc -name passwd >> /tmp/save-both 2>&1               (to append standard output and standard error in same file)    
+==============================================================================================
+3) Constructing pipe lines:
+---------------------------
+[root@master ~]# ls -l /usr/bin | less
+[root@master ~]# ls | wc -l > /tmp/how-many-files
+[root@master ~]# ls -t | head -n 10 > /tmp/ten-last-changed-files
+
+
+==============================================================================================
+4) Editing files with Vim:
+---------------------------
+[root@master ~]# vim file1
+i --> for enter insert mode
+yy -->  copy
+dd --> cut
+pp --> paste
+
+:q --> quit
+:q! --> force quit
+:w ---> save without quit
+:wq --> save and quit
+:wq! --> force save and quit
+:u  --> undo 
+
+
+==============================================================================================
+5) Editing files with gedit:
+---------------------------
+Applications > Accessories > gedit
+[root@master ~]# gedit file1
+==============================================================================================
+6) Editing files with nano:
+---------------------------
+[root@master ~]# nano file1
+==============================================================================================
+
+
