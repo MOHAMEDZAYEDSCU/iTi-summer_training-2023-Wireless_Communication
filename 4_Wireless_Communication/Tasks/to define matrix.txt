@@ -1,0 +1,53 @@
+** to define matrix
+
+- A = {1 2 3 ; 4 5 6} --> 2x3
+- Z=zeros(2,3) --> will be {0 0 0 ; 0 0 0}
+- M = [1 2 3 ; 4 5 6];
+
+- R1=randn(5,6) --> matrix with unknown numbers with decimal .
+
+- R2=randi ([0,10],2,3) --> 2,3 for matrix 2x3 -- 0~10 the possible values #(no deicmal and no negative).
+
+- t = linspace(start,end,number of plots you want to put) --> for drawing -- more accurate and sorted -- like continous .
+
+- clc --> for clear the command window
+
+- f = find(name of matrix) --> detect the location of any non zero number in the matrix, coulumne first (from up to down first then right to left)
+
+- L = length (matrix) -- عدد الصفوف
+- S = size (matrix) -- الصفوف ثم الاعمدة
+
+- RE = reshape (name , your diminsion as you like) // reverse coloumne with rows.
+
+- REP = repmat (name, no of rows الاعمدة تحت بعض,  no of coloumns الصفوف تحت بعض  // to double columne or rows
+
+- sum = sum(E) --> يجمع كل عمود ويضعة ف عنصر واحد
+
+** drawing:
+
+- figure --> to open drawing page 
+- hold on --> do it
+
+** 
+- stem -- digital signal (descrite)
+- scatter -- عشوا~ي plots
+- plot -- 
+- pskmod
+
+** how to use previous commands:
+
+- signal = A*cos*(2*PI*f*t) --> equation of any signal
+
+-  linspace most accurate function -- to set time of the signal.  
+
+
+- randi ([] , , ). // to generate the function.
+- determine the frequence f=1;
+- put the time equation.
+- reshape 
+- signal * carrier - print with previous ways.
+
+- we need to make a pskmod then depskmod modulation with scatter then draw the result of both.
+
+- 
+

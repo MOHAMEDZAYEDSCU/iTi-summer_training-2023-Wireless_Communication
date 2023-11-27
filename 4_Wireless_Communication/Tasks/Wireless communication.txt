@@ -1,0 +1,52 @@
+** wireless communicaton:
+
+- collect
+- communicate
+- analyze 
+- act
+
+** sensing and network layers
+- sensors --> detect input from physical environment
+
+* Tags:
+
+- passive --> no power source, when be near to the reader it givethe tag power to be on.
+- active --> with power source.
+- semi-passive --> 
+
+** IOT systems must be efficient in:
+- power consumption --> less as could.
+- range --> largest as possible.
+- bandwidth --> the channel of data (width of the channal).
+
+** Network layer:
+
+- high power - high range - high band width --> cellular and satellite. -- Lte, 5G(based on M2M).
+- high power - low range - high band width --> wifi , bluetooth 
+- low - high - low --> LPWAN (low power wide area network) like LoRaWAN.
+- low - low - low --> RFID , NFC
+
+** block diagram:
+
+- ADC --> more accurate, flexibility, noise immunity.
+- sourcing incoding -->
+-Modulation --> 
+
+* analog signal --> continous -- affected by noises.
+* digital signal --> descrite -- (0,1) -- not affected by noises -- more accurate.
+
+-- samples frequences with double the frequence -- nyquist rate (Any frequence else making ilyasing).
+
+** modulation:
+- modifying the signal to be transmitted (get help from high signal (carrier signal)).
+ 
+** can be modified by (modulation):
+
+- amplitiude --> alot of problems -- signal on when 1 and off while 0. 
+- frequence --> 
+- phase --> binary phase shift king -- 2 psk (00) in a simpole -- **circule and depend on the angle and phase** -- there is (8 psk) 3 bits(000) -- (16 psk) by 4 bits(0000)
+
+- in the air the signal will be sent analog.
+- 64 QAM (amplitiude and phase) -- 6 bit by simpole.
+- 
+
