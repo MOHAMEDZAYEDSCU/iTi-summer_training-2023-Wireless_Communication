@@ -1,0 +1,71 @@
+1- Install CentOS /RHEL
+
+2- What is the difference between cat and more command?
+- Cat: Read files content
+- More: The more command is a pager utility that allows you to view the contents of a file one screen at a time. It pauses after displaying one screenful of text, and you can navigate through the content using keyboard shortcuts.
+
+3- The Difference between rm & rmdir:
+- rm: to remove only files
+- rmdir: to remove directories.
+
+4- Create the following hierarchy:
+
+
+
+
+
+
+
+5- 
+
+a- can't remove directory direct when it has files in, we can remove files inside first or use rm -r --> for recursive removing files and directory.
+
+b- rmdir -p removed the dir12 directory along with it's parent (dir1) because it became empty after the removal of dir12.
+
+c- 
+1- the absolute path: /home/zayed/Desktop/docs
+2- relative path: /Desktop/docs
+
+5- cp /etc/passwd /home/zayed/Desktop/mypasswd
+
+6- mv mypasswd oldpasswd
+
+** 7- 
+- cd
+- cd ~
+- cd $HOME
+- cd -
+
+8- 
+ w.procps
+ wall
+ watch
+ watchgnupg
+ wc
+ wdctl
+ wget
+ whatis
+ whereis
+ which
+ whiptail
+ who
+ whoami
+ wifi-status
+ write
+ wslfetch
+ wslpath
+ wslsys
+ wslupath
+ wslusc
+ wslvar
+
+9- 
+
+10-
+
+11- man passwd; man /etc/passwd
+
+12- man /etc/passwd
+
+13- man -K passwd
+
